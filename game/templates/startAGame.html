@@ -1,0 +1,38 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+<h1>Welcome!</h1>
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p>What would you like your room name to be?</p>
+    <p>
+        {{ form.roomName.label }}<br />
+        {{ form.roomName(size=32) }}<br>
+        {% for error in form.roomName.errors %}
+        <span style="color: red;">[{{ error }}]
+        {% endfor %}
+    </p>
+    <p>How many players and how many decks would you like to play with?</p>
+    <p>
+        {{ form.numberOfPlayers.label }}<br />
+        {{ form.numberOfPlayers }}
+        {% for error in form.numberOfPlayers.errors %}
+        <span style="color: red;">[{{ error }}]</span><br />
+        {% endfor %}
+        {{ form.numberOfDecks.label }}<br />
+        {{ form.numberOfDecks }}
+        {% for error in form.numberOfDecks.errors %}
+        <span style="color: red;">[{{ error }}]</span><br />
+        {% endfor %}
+    </p>
+    <p>What would you like the room password to be (leave blank for no password)</p>
+    <p>
+        {{ form.roomPassword.label }}<br />
+        {{ form.roomPassword(size=32) }}<br>
+        {% for error in form.roomPassword.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

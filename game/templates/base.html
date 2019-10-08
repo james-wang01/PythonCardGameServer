@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    {%if title %}
+    <title>{{ title }} - 找朋友</title>
+    {% else %}
+    <title>找朋友！</title>
+    {% endif %}
+</head>
+<body>
+    <div>
+        <a href="{{ url_for("index") }}">Home Page</a>
+        <a href="{{ url_for("startAGame") }}">Start A Game</a>
+    </div>
+    {% block content %}{% endblock %}
+</body>
+</html>
