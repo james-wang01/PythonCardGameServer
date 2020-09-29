@@ -1,2 +1,2 @@
 # PythonCardGameServer
-Self-Project to create card game 
+Unfinished Self-Project to create card game 
